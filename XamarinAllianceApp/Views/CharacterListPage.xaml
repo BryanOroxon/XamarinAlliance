@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 	xmlns="http://xamarin.com/schemas/2014/forms" 
+				xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+				x:Class="XamarinAllianceApp.Views.CharacterListPage"
+				Title="Xamarin Alliance Members">
+
+    <ContentPage.BackgroundImage>
+        <OnPlatform x:TypeArguments="x:String" 
+                    WinPhone="Assets/xa_background.jpg" 
+                    iOS="xa_background.jpg"
+                    Android="Resources/drawable/xa_background.jpg" 
+                    />
+    </ContentPage.BackgroundImage>
+
+    <Grid RowSpacing="0" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <ListView x:Name="characterList"
+                ItemsSource="{Binding Items}"
+                RefreshCommand="{Binding LoadItemsCommand}"
+                IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+                ItemSelected="OnItemSelected"
+                IsPullToRefreshEnabled="True"
+				BackgroundColor="Transparent"
+                HasUnevenRows="true"
+				Grid.Row="1">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout HorizontalOptions="Start" Orientation="Vertical" Padding="15,5,5,15" >
+                            <Label Text="{Binding Name}" Style="{StaticResource LabelHeaderStyle}" />
+                            <Label Text="{Binding Biography}" Style="{StaticResource LabelNormalStyle}" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</ContentPage>

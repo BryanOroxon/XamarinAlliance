@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinAllianceApp.Views.LoginPage"
+             Title="Facebook Login">
+    <ContentPage.BackgroundImage>
+        <OnPlatform x:TypeArguments="x:String"
+                    WinPhone="Assets/xa_background.jpg"
+                    iOS="xa_background.jpg"
+                    Android="Resources/drawable/xa_background.jpg" />
+    </ContentPage.BackgroundImage>
+    <StackLayout>
+        <Image x:Name="imgLogo" HorizontalOptions="Center" 
+               VerticalOptions="CenterAndExpand"
+               HeightRequest="400" Aspect="AspectFit"/>
+        <Label TextColor="White" Text="GUID for Diploma"/>
+        <Label x:Name="guidLabel" TextColor="White"/>
+            <Button x:Name="btnLogin" Text="Login" Clicked="BtnLogin_Clicked"
+            HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
+    </StackLayout>
+</ContentPage>
