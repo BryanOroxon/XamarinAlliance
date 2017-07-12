@@ -33,7 +33,7 @@ You can rotate the device, and the screen adapts to the landscape view.
 
 <a name="team-members"></a>Made by
 
-"Luis Bryan Oroxón Ramírez" lanzer2002@hotmail.com
+"Luis Bryan Oroxón Ramírez"
 
 ### Stuff used to make this:
 
